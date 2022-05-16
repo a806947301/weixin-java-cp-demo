@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+<a :href="loginUrl">调取登录接口H5</a>
+
+    <br><br>
+    <a :href="loginUrl">调取登录接口PC</a>
+
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            loginUrl: 'Hello Vue!',
+            loginUrlPc: 'Hello Vue!'
+        },
+        created: function () {
+            axios.get('/login/loginUrlH5')
+                .then(function (response) {
+                    app.loginUrl = response.data
+
+                })
+            axios.get('/login/loginUrl')
+                .then(function (response) {
+                    app.loginUrlPc = response.data
+
+                })
+
+        }
+
+    })
+</script>
+</body>
+</html>
