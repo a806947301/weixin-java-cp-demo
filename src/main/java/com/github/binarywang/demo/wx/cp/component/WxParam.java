@@ -28,7 +28,7 @@ public class WxParam {
     private WxCpProperties wxCpProperties;
 
     /** 服务商ticket  todo */
-    private String suiteTicket = "E9LjsIu8Un-axque3D4vc7ixBQYRztfkiZAdupVhMtp2vQqjNsr4T4iMpSk4-7L9";
+    private String suiteTicket = "E9LjsIu8Un-axque3D4vc8jgFYNbo9sdRUd3JngbO1ISw1EiOW0ez7jW-XhP7EEo";
 
     /** 服务商token */
     private String suiteAccessToken;

@@ -1,0 +1,45 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.github.binarywang.demo.wx.cp: DEBUG
+    me.chanjar.weixin: DEBUG
+wechat:
+  cp:
+    corpId: ww373fefe0069618ef
+    providerSecret: hD1OKFALwWPFb81jwsYBjx0ChmUqb8ews4sDj24JlvG2Vbf79-v77KwE_IkDNVoU
+    authCallback: http://q3s1222063.wicp.vip:29082/my/authCallBack
+    appConfigs:
+      - agentId: 1
+        suiteID: ww96196feb27b2ab39
+        secret: EZ5RjbNn8mPoXk7n3gVFwL7z-2j2bdRvoE0UwSSBjfM
+        chatSecret: nQZKNJoSy1k2673qP6mUGCZPUqPYR--lJAvZVLc07bA
+        token: 5gmVGeOInrIIvsp
+        aesKey: Spv8XIhefOdFSsW4pROgDL76isnscXtnThEumvc791a
+server:
+  port: 8000
+
+#nacos:
+#    config:
+#        server-addr: ${MD-NACOS-ADDR:172.28.1.61:8848}
+#        type: yaml
+#        remote-first: false # 远程的配置的优先
+#        namespace: ${spring.profiles.active}
+#        # 配置文件名称 : dayi-user-dev.yaml
+#        data-id: ${spring.application.name}-${spring.profiles.active}.${nacos.config.type}
+#        auto-refresh: true # 是否启用动态刷新配置，但是对应的属性注解上也必须设置autoRefreshed = true才可以实时更新
+#        bootstrap:
+#            enable: true # 开启配置预加载功能
+dubbo:
+    registry:
+        address: nacos://172.28.1.61:8848?namespace=dev
+    application:
+        name: fl-test11
+        owner: fl
+        organization: fl
+    protocol:
+        dubbo:
+            port: 23510
+    threads: 100
+    timeout: 3000
+    cluster: failover
+    retries: 0
